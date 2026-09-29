@@ -18,7 +18,11 @@ public class Robot extends OpModeRobot {
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
    */
-  public Robot() {}
+  public Robot() {
+    //ADDED:
+    public DCMotor frontLeft = new DCMotor("frontLeft");
+    //frontLeft = new Motor("frontLeft");
+  }
 
   /** This function is called exactly once when the DS first connects. */
   @Override

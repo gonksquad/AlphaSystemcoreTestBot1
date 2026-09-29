@@ -1,5 +1,5 @@
 // Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
+// Open Source Software; you can modify and/or share it under the terms ofr
 // the WPILib BSD license file in the root directory of this project.
 
 package first.robot.opmode;
@@ -11,6 +11,7 @@ import first.robot.Robot;
 @Teleop
 public class MyTeleop extends PeriodicOpMode {
   private final Robot robot;
+  gamepad1 gamepad1 = new gamepad1();
 
   /** The Robot instance is passed into the opmode via the constructor. */
   public MyTeleop(Robot robot) {
@@ -30,6 +31,11 @@ public class MyTeleop extends PeriodicOpMode {
   @Override
   public void periodic() {
     /* Called on every robot period while the robot is enabled. */
+    if (gamepad1.a) {
+      robot.frontLeft.setPower(1.0);
+    } else {
+      robot.frontLeft.setPower(0.0);
+    }
   }
 
   @Override
